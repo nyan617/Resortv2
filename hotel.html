@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grandview Resort & Spa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-inter { font-family: 'Inter', sans-serif; }
+
+/* Card hover */
+.card-hover { transition: all 0.4s ease; }
+.card-hover:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px rgba(255, 255, 255, 0.15); }
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, #c4a574 0%, #d4b584 100%);
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #b49564 0%, #c4a574 100%);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero parallax */
+.hero-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar scroll effect */
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Navbar text color */
+nav a {
+  color: white;
+  transition: color 0.3s;
+}
+nav.scrolled a {
+  color: black;
+}
+nav a:hover {
+  color: #FFC107; /* amber hover */
+}
+
+/* Mobile menu links */
+#mobile-menu a {
+  color: white;
+  transition: color 0.3s;
+}
+nav.scrolled #mobile-menu a {
+  color: black;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
+<body class="font-inter text-gray-800">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 bg-transparent backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="pics/2.png" alt="Grandview Resort Logo" class="h-12 w-auto">
+        <span class="font-playfair text-2xl font-bold ml-2 hidden sm:inline">Grandview Resort</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="transition-colors">Home</a>
+        <a href="rooms.html" class="transition-colors">Rooms</a>
+        <a href="video.html" class="transition-colors">Video</a>
+        <a href="about.html" class="transition-colors">About Us</a>
+        <a href="contact.html" class="transition-colors">Contact</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Book Now Button -->
+      <button class="btn-primary text-white px-6 py-2 rounded-full font-medium ml-4 hidden md:inline-block">
+        Book Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-transparent backdrop-blur-sm pb-4 flex flex-col px-4 py-4 space-y-4">
+    <a href="#home">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="video.html">Video</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn-primary text-white px-6 py-2 rounded-full font-medium mt-2 w-full">
+      Book Now
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-white hero-bg" style="background-image:url('pics/promo.jpg');">
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="relative z-10 text-center max-w-4xl px-4 fade-in">
+    <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Grandview Resort</h1>
+    <p class="text-lg sm:text-xl md:text-2xl mb-8 font-light">
+      Experience unparalleled comfort and elegance at our award-winning resort
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <a href="#rooms" class="btn-primary text-white px-8 py-4 rounded-full font-medium text-lg w-full sm:w-auto">
+        Explore Rooms
+      </a>
+<a href="gallery.html" class="w-full sm:w-auto">
+  <button class="border-2 border-white text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white hover:text-gray-800 transition-all w-full sm:w-auto">
+    View Gallery
+  </button>
+</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms Section -->
+<section id="rooms" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header with See More -->
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-gray-800">Our Rooms</h2>
+      <a href="rooms.html" class="text-amber-600 font-semibold hover:text-amber-700 transition-colors">
+        See More
+      </a>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="relative overflow-hidden h-[450px]">
+      <div id="room-carousel" class="relative w-full h-full">
+        <!-- Room 1 -->
+        <div class="absolute inset-0 bg-white rounded-xl shadow-lg overflow-hidden p-6 flex flex-col justify-between opacity-0 scale-90 transition-all duration-1000">
+          <div>
+            <img src="pics/Deluxe-Suite.jpg" alt="Deluxe Suite" class="w-full h-64 sm:h-72 object-cover rounded-lg mb-4 shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Deluxe Suite</h3>
+            <p class="text-gray-600 mb-4">Spacious and elegant room with stunning views.</p>
+          </div>
+          <a href="rooms.html#DeluxeSuite" class="text-amber-600 font-semibold hover:text-amber-700 transition-colors self-start">
+            View Details →
+          </a>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="absolute inset-0 bg-white rounded-xl shadow-lg overflow-hidden p-6 flex flex-col justify-between opacity-0 scale-90 transition-all duration-1000">
+          <div>
+            <img src="pics/ex room.jpg" alt="Executive Room" class="w-full h-64 sm:h-72 object-cover rounded-lg mb-4 shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Executive Room</h3>
+            <p class="text-gray-600 mb-4">Comfortable room with modern amenities and cozy ambiance.</p>
+          </div>
+          <a href="rooms.html#ExecutiveRoom" class="text-amber-600 font-semibold hover:text-amber-700 transition-colors self-start">
+            View Details →
+          </a>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="absolute inset-0 bg-white rounded-xl shadow-lg overflow-hidden p-6 flex flex-col justify-between opacity-0 scale-90 transition-all duration-1000">
+          <div>
+            <img src="pics/Presidential-Suite.jpg" alt="Presidential Suite" class="w-full h-64 sm:h-72 object-cover rounded-lg mb-4 shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Presidential Suite</h3>
+            <p class="text-gray-600 mb-4">Luxury at its finest with panoramic views and exclusive amenities.</p>
+          </div>
+          <a href="rooms.html#PresidentialSuite" class="text-amber-600 font-semibold hover:text-amber-700 transition-colors self-start">
+            View Details →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Auto-rotate carousel with fade-in and fade-out
+const slides = document.querySelectorAll('#room-carousel > div');
+let currentSlide = 0;
+
+// Initialize first slide
+slides[currentSlide].style.opacity = 1;
+slides[currentSlide].style.transform = 'scale(1)';
+
+function showNextSlide() {
+  // Fade out current
+  slides[currentSlide].style.opacity = 0;
+  slides[currentSlide].style.transform = 'scale(0.9)';
+
+  // Next index
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  // Fade in next
+  slides[currentSlide].style.opacity = 1;
+  slides[currentSlide].style.transform = 'scale(1)';
+}
+
+// Rotate every 3 seconds
+setInterval(showNextSlide, 3000);
+</script>
+
+<style>
+/* Optional: smooth hover */
+.card-hover {
+  transition: all 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+<!-- Footer -->
+<footer class="py-12 fade-in" style="background-color: #b49564; color: #fff;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="font-playfair text-2xl font-bold mb-4 flex items-center">
+          <span class="inline-block w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-3">
+            <img src="pics/qi6Tfv01.svg" alt="Grandview.svg" class="h-8 w-8">
+          </span>
+          Grandview Resort
+        </h3>
+        <p class="text-white">
+          Luxury hospitality redefined with exceptional service and unforgettable experiences.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-white">
+          <li><a href="rooms.html" class="hover:text-gray-200 transition-colors">Rooms & Suites</a></li>
+          <li><a href="video.html" class="hover:text-gray-200 transition-colors">Video</a></li>
+          <li><a href="about.html" class="hover:text-gray-200 transition-colors">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-gray-200 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4">Services</h4>
+        <ul class="space-y-2 text-white">
+          <li>Spa & Wellness</li>
+          <li>Event Planning</li>
+          <li>Airport Transfer</li>
+          <li>Concierge Service</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">📘</a>
+          <a href="#" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">📷</a>
+          <a href="#" class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/30 mt-8 pt-8 text-center text-white">
+      <p>&copy; 2024 Grandview Resort & Spa. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Mobile menu toggle
+const btn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('mobile-menu');
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+});
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{ threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

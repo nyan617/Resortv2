@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video | Grandview Resort & Spa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-inter { font-family: 'Inter', sans-serif; }
+
+/* Card hover */
+.card-hover { transition: all 0.4s ease; }
+.card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, #c4a574 0%, #d4b584 100%);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b49564 0%, #c4a574 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Fade-in animations */
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Navbar scroll effect */
+nav.scrolled { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+</style>
+</head>
+<body class="font-inter text-gray-800 bg-gray-50">
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="hotel.html" class="flex items-center">
+        <img src="pics/2.png" alt="Grandview Logo" class="h-10 sm:h-12 w-auto">
+        <span class="font-playfair text-lg sm:text-2xl font-bold text-gray-800 ml-2">Grandview Resort</span>
+      </a>
+      <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm lg:text-base">
+        <a href="hotel.html" class="hover:text-amber-600">Home</a>
+        <a href="rooms.html" class="hover:text-amber-600">Rooms</a>
+        <a href="video.html" class="text-amber-600 font-semibold">Video</a>
+        <a href="about.html" class="hover:text-amber-600">About Us</a>
+        <a href="contact.html" class="hover:text-amber-600">Contact</a>
+      </div>
+      <button class="btn-primary text-white px-4 sm:px-6 py-2 rounded-full font-medium hidden md:inline-block">Book Now</button>
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm pb-4">
+    <div class="flex flex-col px-4 py-4 space-y-4">
+      <a href="hotel.html" class="hover:text-amber-600">Home</a>
+      <a href="rooms.html" class="hover:text-amber-600">Rooms</a>
+      <a href="video.html" class="text-amber-600 font-semibold">Video</a>
+      <a href="about.html" class="hover:text-amber-600">About Us</a>
+      <a href="contact.html" class="hover:text-amber-600">Contact</a>
+      <button class="btn-primary text-white px-6 py-2 rounded-full font-medium mt-2">Book Now</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative h-[60vh] sm:h-[70vh] flex items-center justify-start text-white text-left px-8 sm:px-16" style="background-color: #b49564;">
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="relative z-10 fade-in max-w-xl">
+    <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold">Our Videos</h1>
+    <p class="mt-4 text-base sm:text-lg md:text-xl">
+      Experience the luxury and elegance of Grandview Resort through our curated video collection.
+    </p>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="py-12 sm:py-16 fade-in">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold mb-8 sm:mb-12 text-gray-800 text-center">
+      Resort Video
+    </h2>
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <!-- Responsive Video -->
+      <div class="relative" style="padding-top: 56.25%;">
+        <iframe class="absolute top-0 left-0 w-full h-full rounded-t-xl" 
+                src="https://www.youtube.com/embed/H1CIBqDeWQ0" 
+                title="Grandview Resort Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+
+      <!-- Video Description -->
+      <div class="p-4 sm:p-6">
+        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Grandview Resort Tour</h3>
+        <p class="text-sm sm:text-base md:text-lg text-gray-600">
+          Take a virtual tour of our luxurious resort, showcasing our elegant rooms, amenities, and beautiful surroundings.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-t from-[#b49564] to-[#c4a574] text-white py-12">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h3 class="font-playfair text-xl sm:text-2xl font-bold mb-4">Grandview Resort & Spa</h3>
+    <p class="text-white/90 text-sm sm:text-base mb-4">Luxury hospitality redefined with exceptional service and unforgettable experiences.</p>
+    <p class="text-white/70 text-xs sm:text-sm">&copy; 2024 Grandview Resort & Spa. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const btn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('mobile-menu');
+btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{ threshold: 0.2 });
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

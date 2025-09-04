@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Grandview Resort & Spa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-inter { font-family: 'Inter', sans-serif; }
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(135deg, #c4a574 0%, #d4b584 100%);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b49564 0%, #c4a574 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+</style>
+</head>
+<body class="font-inter text-gray-800">
+
+<nav id="navbar" class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="hotel.html" class="flex items-center">
+        <img src="pics/2.png" alt="Grandview Resort Logo" class="h-10 sm:h-12 w-auto">
+        <span class="font-playfair text-lg sm:text-2xl font-bold text-gray-800 ml-2">Grandview Resort</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm lg:text-base">
+        <a href="hotel.html#home" class="hover:text-amber-600">Home</a>
+        <a href="rooms.html" class="hover:text-amber-600">Rooms</a>
+        <a href="video.html" class="hover:text-amber-600">Video</a>
+        <a href="about.html" class="text-amber-600 font-semibold">About Us</a>
+        <a href="contact.html" class="hover:text-amber-600">Contact</a>
+      </div>
+
+      <!-- Book Now Button -->
+      <button class="btn-primary text-white px-4 sm:px-6 py-2 rounded-full font-medium hidden md:inline-block">
+        Book Now
+      </button>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+    <a href="hotel.html" class="block py-2 text-sm text-gray-700 hover:text-amber-600">Home</a>
+    <a href="rooms.html" class="block py-2 text-sm text-gray-700 hover:text-amber-600">Rooms</a>
+    <a href="video.html" class="block py-2 text-sm text-gray-700 hover:text-amber-600">Video</a>
+    <a href="about.html" class="block py-2 text-sm text-amber-600 font-semibold">About Us</a>
+    <a href="contact.html" class="block py-2 text-sm text-gray-700 hover:text-amber-600">Contact</a>
+    <button class="btn-primary text-white w-full mt-4 py-2 rounded-full font-medium text-sm">
+      Book Now
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative h-[60vh] sm:h-[70vh] flex items-center justify-center text-white text-center bg-cover bg-center" 
+  style="background-image: url('pics/istockphoto-2057968201-612x612.webp');">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-4 fade-in">
+    <h1 class="font-playfair text-3xl sm:text-5xl md:text-7xl font-bold">About Us</h1>
+    <p class="mt-4 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+      Discover the story behind Grandview Resort & Spa — where luxury meets comfort.
+    </p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="py-16 sm:py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <img src="pics/hotel-lobby.webp" alt="Lobby" class="rounded-xl shadow-lg fade-in w-full">
+    <div class="fade-in">
+      <h2 class="text-3xl sm:text-4xl font-playfair font-bold mb-6">Our Story</h2>
+      <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
+        Established with a vision to redefine luxury hospitality, Grandview Resort & Spa is more than a destination — it is an experience. 
+        Nestled amidst breathtaking landscapes, we blend modern elegance with timeless charm. 
+        Our resort is designed to offer guests serenity, comfort, and unforgettable moments.
+    </p>
+<a href="rooms.html">
+  <button class="btn-primary text-white px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base">
+    Explore Our Rooms
+  </button>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Values -->
+<section class="py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl sm:text-4xl font-playfair font-bold mb-12">Our Core Values</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+      <div class="p-6 sm:p-8 bg-white rounded-xl shadow-md fade-in">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">Excellence</h3>
+        <p class="text-gray-600 text-sm sm:text-base">We set the highest standards in service and hospitality, ensuring each guest feels valued.</p>
+      </div>
+      <div class="p-6 sm:p-8 bg-white rounded-xl shadow-md fade-in">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">Warmth</h3>
+        <p class="text-gray-600 text-sm sm:text-base">Our golden accents reflect the genuine care and warmth we extend to every guest.</p>
+      </div>
+      <div class="p-6 sm:p-8 bg-white rounded-xl shadow-md fade-in">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">Innovation</h3>
+        <p class="text-gray-600 text-sm sm:text-base">We embrace creativity and modern luxury to continually elevate guest experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="py-16 sm:py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl sm:text-4xl font-playfair font-bold mb-12">Meet Our Team</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+      <div class="bg-white p-6 rounded-xl shadow fade-in">
+        <img src="pics/Random man.webp" class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" alt="Manager">
+        <h3 class="font-bold text-lg sm:text-xl">James Carter</h3>
+        <p class="text-gray-500 text-sm sm:text-base">General Manager</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow fade-in">
+        <img src="pics/e4de1e0b-be19-4ed7-970f-8fd006b4755d.webp" class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" alt="Spa Director">
+        <h3 class="font-bold text-lg sm:text-xl">Sophia Lee</h3>
+        <p class="text-gray-500 text-sm sm:text-base">Spa Director</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow fade-in">
+        <img src="pics/mam.webp" class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full object-cover mb-4" alt="Head Chef">
+        <h3 class="font-bold text-lg sm:text-xl">Marco Rossi</h3>
+        <p class="text-gray-500 text-sm sm:text-base">Head Chef</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-t from-[#b49564] to-[#c4a574] text-white py-12">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h3 class="font-playfair text-xl sm:text-2xl font-bold mb-4">Grandview Resort & Spa</h3>
+    <p class="text-white/90 text-sm sm:text-base mb-4">Luxury hospitality redefined with exceptional service and unforgettable experiences.</p>
+    <p class="text-white/70 text-xs sm:text-sm">&copy; 2024 Grandview Resort & Spa. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Fade-in effect
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{ threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+</script>
+
+
+</body>
+</html>
